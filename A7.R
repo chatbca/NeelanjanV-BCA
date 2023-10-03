@@ -1,0 +1,26 @@
+cat("\014")
+cat("\nCreating Factors of martital satus\n")
+martial_satus<-factor(c("Married","Single","Divorced","Single","Single","Married"))
+print(martial_satus)
+cat("\n(a).Is martial satus a factor?:")
+print(is.factor(martial_satus))
+cat("\n(b).The 2nd element in factor martial_status\n")
+print(martial_satus[2])
+cat("\n(b).The 4th element in factor martial_status\n")
+print(martial_satus[4])
+cat("\n(4).Orginal Factors\n")
+print(martial_satus)
+cat("\n Factors in martial satus after removing 3rd element\n")
+martial_satus<-martial_satus[-3]
+print(martial_satus)
+cat("\n(d).Mdoifing  2nd element in factors to 'Married'\n")
+martial_satus[2]<-"Married"
+print(martial_satus)
+cat("\n(e).Adding new level to factor")
+levels(martial_satus)<-c(levels(martial_satus),"Widowed")
+cat("\n Actual elements in martial satus\n")
+print(martial_satus)
+cat("\n(e).Adding new element 'Widowed' at the end of the factors\n")
+n=length(martial_satus)
+martial_satus[n+1]<-"Widowed"
+print(martial_satus
