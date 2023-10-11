@@ -1,26 +1,23 @@
+cat("\014")
+set.seed(1)
 
-time_intervals <- c("0-5", "5-10", "10-15", "15-20", "20-25")
+x<-c((runif(5,0,5)),(runif(25,5,10)),(runif(40,10,15)),(runif(17,15,20)),(runif(13,20,25)))
+print(x)
+res<-hist(x,
+          main="Time taken by 100 students to travel to school",
+          xlab="Time in minutes",
+          ylab="No.of Students",
+          col="yellow",
+          border="red")
 
+print(res)
+x.axis=c(min(res$breaks),res$mids,max(res$breaks))
+y.axis=c(0,res$counts,0)
+lines(x.axis,y.axis,type='o')
 
-students <- c(5, 25, 40, 17, 13)
-
-
-data <- data.frame(Time = time_intervals, Students = students)
-
-
-barplot(data$Students, names.arg = data$Time, col = "blue",
-        main = "Histogram of Time Taken to Travel to School",
-        xlab = "Time Intervals (minutes)", ylab = "Number of Students")
-
-midpoints <- c(2.5, 7.5, 12.5, 17.5, 22.5)
-
-
-plot(midpoints, students, type = "o", col = "red", pch = 19,
-     main = "Frequency Polygon of Time Taken to Travel to School",
-     xlab = "Time Intervals (minutes)", ylab = "Number of Students")
-
-points(midpoints, students, col = "red", pch = 19)
-
-
-lines(midpoints, students, col = "red")
-
+plot(x.axis,
+     y.axis,
+     main="Time taken by 100 student to travel to school",
+     xlab="Time in Minutes",
+     ylab="No of students")
+polygon(x.axis,y.axis,col="green")
