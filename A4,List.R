@@ -1,20 +1,15 @@
 cat("\014")
-student_list=list("Neelanjan V",032,"BCA","19",c(15,20,30),TRUE)
-cat("Access the first element in the list->Student record\n")
-print(student_list)
-print(student_list[1])
-names(student_list)<-c("Student name","Reg.No","Course","Age","Marks","Passed")
-cat("\nStudent Record with column name\n\n")
-print(student_list)
-student_list=append(student_list,"Vth sem",after=3)
-names(student_list)<-c("Student Name","Reg.No","Coures","Semester","Age","Marks","Passed")
-cat("\nStudent after addding Semester number\n\n")
-print(student_list)
-student_list$Age=NULL
-cat("\n Student Record after removing age column\n\n")
-print(student_list)
-cat("\nFirst element of Student Record:",student_list[[1]],"\n\n")
-cat("\n Third element of Student Record:",student_list[[3]],"\n\n")
-cat("\nUpdated third element[Course]of Student Record\n\n")
-student_list[3]="Bcom"
-print(student_list)
+my_list <- list("hello", 123, c(1, 2, 3), TRUE) 
+first_element <- my_list[[1]] 
+print(first_element) 
+names(my_list) <- c("string", "number", "vector", "logical") 
+my_list <- append(my_list, "new element", after = 2) 
+print(my_list) 
+my_list <- my_list[-3] 
+print(my_list) 
+first_element <- my_list[[1]] 
+third_element <- my_list[[3]] 
+print(first_element) 
+print(third_element) 
+my_list[[3]] <- c(4, 5, 6) 
+print(my_list)
