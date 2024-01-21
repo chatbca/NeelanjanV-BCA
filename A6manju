@@ -1,0 +1,27 @@
+data<-data.frame( 
+itemCode=c(1001,1002,1003,1004,1005), 
+itemCategory=c("Electronics","Desktop Supplies","Office 
+Supplies","USB","CD Drive"), 
+ItemPrice=c(700,300,350,400,800) 
+) 
+subset_a<-data[data$ItemPrice>=350,] 
+subset_b<-data[data$itemCategory%in%c("Office Supplies","Desktop 
+Supplies"),] 
+subset_c<-data[data$ItemPrice>=300&data$ItemPrice<=700,] 
+total_price<-sum(data$ItemPrice) 
+item_details<-data.frame( 
+itemCode=c(1001,1002,1003,1004,1005), 
+ItemQtyonHand=c(10,15,20,5,12), 
+ItemReorderLvl=c(2,5,3,4,6) 
+) 
+merge_data<-merge(data,item_details,by="itemCode") 
+print("a. subset greater than = 350") 
+print(subset_a) 
+print("b. subset item is office or desktop") 
+print(subset_b) 
+print("c. between 300 and 700") 
+print(subset_c) 
+print("d. sum of the item") 
+print(total_price) 
+print("e. Merge data") 
+print(merge_data)
